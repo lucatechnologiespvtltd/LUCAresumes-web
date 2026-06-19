@@ -1,0 +1,215 @@
+/* Landing Page CSS */
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 85vh;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  background: rgba(79, 125, 243, 0.08);
+  border: 1px solid rgba(79, 125, 243, 0.2);
+  color: var(--primary-light);
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  max-width: 900px;
+  color: #fff;
+  font-family: var(--font-outfit);
+  margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.cta-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+/* Feature Showcase Grid */
+.features-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.feature-card {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(79, 125, 243, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-light);
+  margin-bottom: 0.5rem;
+}
+
+.feature-title {
+  font-size: 1.35rem;
+  color: #fff;
+  font-family: var(--font-outfit);
+}
+
+.feature-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Pricing Grid */
+.pricing-section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  color: #fff;
+  font-family: var(--font-outfit);
+  margin-bottom: 1rem;
+}
+
+.pricing-desc {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 3.5rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.pricing-card {
+  padding: 3rem;
+  position: relative;
+}
+
+.pricing-card.premium {
+  border: 1px solid var(--primary);
+  background: rgba(33, 36, 43, 0.6);
+}
+
+.pricing-card.premium::after {
+  content: "MOST POPULAR";
+  position: absolute;
+  top: 1.25rem;
+  right: 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--primary-light);
+  background: rgba(79, 125, 243, 0.15);
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  border: 1px solid rgba(79, 125, 243, 0.25);
+  letter-spacing: 0.05em;
+}
+
+.price-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.price-value {
+  font-size: 2.75rem;
+  color: #fff;
+  font-family: var(--font-outfit);
+  margin-bottom: 1.5rem;
+}
+
+.price-value span {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.price-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.5rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.price-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.price-features li svg {
+  color: #10b981;
+}
+
+/* Footer Section */
+.footer {
+  border-top: 1px solid var(--border-glass);
+  padding: 3rem 2rem;
+  text-align: center;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+/* Responsive options */
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

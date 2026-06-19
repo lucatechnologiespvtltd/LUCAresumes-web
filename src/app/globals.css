@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-outfit: 'Outfit', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  /* Premium Dark Palette */
+  --bg-deep: #0f1117;
+  --bg-base: #161920;
+  --bg-card: #21242b;
+  --bg-card-hover: #282b33;
+  
+  /* Muted Accents */
+  --primary: #3d5ce0;
+  --primary-light: #5c7ae6;
+  --accent-cyan: #3b9b8f;
+  --accent-pink: #8b8f9a;
+  
+  /* Text */
+  --text-main: #e1e4ea;
+  --text-muted: #8b8f9a;
+  --text-dark: #5a5e6a;
+
+  /* Borders & Shadows */
+  --border-glass: rgba(255, 255, 255, 0.07);
+  --border-focus: #4f7df3;
+  --shadow-glow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-intense: 0 16px 36px rgba(0, 0, 0, 0.35);
+
+  /* Gradients */
+  --grad-premium: #4f7df3;
+  --grad-sunset: #3b9b8f;
+  --grad-card: #21242b;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-inter);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(79, 125, 243, 0.04) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(59, 155, 143, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Premium Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient {
+  color: var(--primary-light);
+}
+
+.text-gradient-sunset {
+  color: var(--accent-cyan);
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 24px;
+  box-shadow: var(--shadow-glow), var(--shadow-intense);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Premium Input Fields */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.input-premium {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  font-family: var(--font-inter);
+}
+
+.input-premium:focus {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--border-focus);
+}
+
+.input-label {
+  position: absolute;
+  left: 1.25rem;
+  top: 1rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.input-premium:focus ~ .input-label,
+.input-premium:not(:placeholder-shown) ~ .input-label {
+  top: -0.6rem;
+  left: 0.8rem;
+  font-size: 0.75rem;
+  padding: 0 0.4rem;
+  background: var(--bg-base);
+  color: var(--primary-light);
+  border-radius: 4px;
+}
+
+/* Buttons */
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 2rem;
+  border-radius: 12px;
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ffffff;
+  background: var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-premium:hover {
+  transform: translateY(-1px);
+  background: var(--primary-light);
+  box-shadow: 0 6px 16px rgba(79, 125, 243, 0.25);
+}
+
+.btn-premium:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 2rem;
+  border-radius: 14px;
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Micro-animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.9; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Premium Navigation Bar (Shared) */
+.dash-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: rgba(12, 11, 18, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Unified Premium Brand Logo */
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.brand-logo:hover {
+  opacity: 0.85;
+}
+
+.brand-name {
+  font-family: var(--font-outfit);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #e1e4ea;
+  letter-spacing: 0.06em;
+  transition: color 0.2s ease;
+}
+
+.brand-logo:hover .brand-name {
+  color: #ffffff;
+}
+
+.brand-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin: 0 0.5rem;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  transition: background-color 0.2s ease;
+}
+
+.brand-logo:hover .brand-dot {
+  background: var(--primary-light);
+}
+
+.brand-sub {
+  font-family: var(--font-outfit);
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #5a5e6a;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.brand-logo:hover .brand-sub {
+  color: #8b8f9a;
+}
+
