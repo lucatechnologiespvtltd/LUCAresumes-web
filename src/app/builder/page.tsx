@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -81,7 +81,7 @@ const SECTIONS: { key: BuilderSection | "templates"; label: string; icon: React.
   { key: "templates", label: "Templates", icon: <Sparkles size={15} /> },
 ];
 
-export default function BuilderPage() {
+function BuilderPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -1420,5 +1420,20 @@ export default function BuilderPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function BuilderPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="builder-loading">
+          <RefreshCw className="animate-spin" size={36} style={{ color: "var(--primary-light)" }} />
+          <p className="builder-loading-text">Loading Resume Builder...</p>
+        </div>
+      }
+    >
+      <BuilderPageContent />
+    </Suspense>
   );
 }
